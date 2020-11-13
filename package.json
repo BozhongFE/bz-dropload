@@ -1,5 +1,5 @@
 {
-  "name": "bz-dropload",
+  "name": "@bz/dropload",
   "version": "0.1.1",
   "description": "播种网——多方向触底加载插件",
   "main": "dist/bz-dropload.js",
