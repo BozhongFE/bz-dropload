@@ -15,6 +15,7 @@
       downdistance: -50, // 设置下拉触发距离
     };
     this.handle = null; // 处理函数
+    this.timeout = null; // 防抖处理
     that = this;
     this._init();
   };
@@ -74,7 +75,10 @@
     }
 
     if (clientHeight + scrollTop >= scrollHeight - defaultConfig.updistance) {
-      handle && handle();
+      if (this.timeout != null) { clearTimeout(this.timeout); }
+      this.timeout = setTimeout(function () {
+        handle && handle();
+      }, 100);
     }
   };
 
